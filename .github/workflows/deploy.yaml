@@ -16,6 +16,9 @@ jobs:
 
     name: Deployment
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: expense-type-service
 
     steps:
 
@@ -33,9 +36,6 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-
-      - name: Move to expense-type-service folder
-        run: cd expense-type-service
 
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
