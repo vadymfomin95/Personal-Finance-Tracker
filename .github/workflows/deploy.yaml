@@ -8,7 +8,7 @@ on:
 env:
   ECR_REPOSITORY: expense-type-service
   EKS_CLUSTER_NAME: personal-finance-tracker-cluster
-  AWS_REGION: us-east-1
+  AWS_REGION: eu-north-1
 
 jobs:
 
