@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-type-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: expense-type-service
+  template:
+    metadata:
+      labels:
+        app: expense-type-service
+    spec:
+      containers:
+        - name: expense-type-service
+          image: public.ecr.aws/t0u9j7w8/expense-type-service
+          ports:
+            - containerPort: 8080
