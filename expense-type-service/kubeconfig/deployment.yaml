@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: expense-type-service
-          image: public.ecr.aws/t0u9j7w8/expense-type-service
+          image: 920871346103.dkr.ecr.eu-north-1.amazonaws.com/expense-type-service
           ports:
             - containerPort: 8080
