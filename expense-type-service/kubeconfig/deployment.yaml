@@ -15,5 +15,6 @@ spec:
       containers:
         - name: expense-type-service
           image: 920871346103.dkr.ecr.eu-north-1.amazonaws.com/expense-type-service
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
