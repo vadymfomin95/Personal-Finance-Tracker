@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-service
+  template:
+    metadata:
+      labels:
+        app: ui-service
+    spec:
+      containers:
+        - name: ui-service
+          image: 920871346103.dkr.ecr.eu-north-1.amazonaws.com/ui-service:0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
