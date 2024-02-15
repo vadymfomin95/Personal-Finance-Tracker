@@ -1,0 +1,32 @@
+name: Deploy Ui
+
+on:
+
+  push:
+    branches: [ main ]
+    paths: [ ui ]
+
+env:
+  ECR_REPOSITORY: ui-service
+  EKS_CLUSTER_NAME: personal-finance-tracker-cluster
+  AWS_REGION: eu-north-1
+  IMAGE_TAG: 0.1
+
+jobs:
+
+  build:
+
+    name: Deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: expense-type-service
+
+    steps:
+
+      - name: Set short git commit SHA
+        id: commit
+        uses: prompt/actions-commit-hash@v2
+
+      - name: Check out code
+        uses: actions/checkout@v2

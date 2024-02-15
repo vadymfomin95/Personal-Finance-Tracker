@@ -1,9 +1,10 @@
-name: Deploy to ECR
+name: Deploy Expense Type Service
 
 on:
 
   push:
     branches: [ main ]
+    paths: [ expense-type-service ]
 
 env:
   ECR_REPOSITORY: expense-type-service
@@ -50,6 +51,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{env.AWS_REGION}}
+          
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
